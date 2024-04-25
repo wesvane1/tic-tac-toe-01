@@ -72,6 +72,6 @@ export class TestComponent {
       }
     }
   
-    return("neither"); // No winner found
+    return(""); // No winner found
   }
 }
