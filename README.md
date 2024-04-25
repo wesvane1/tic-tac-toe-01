@@ -1,3 +1,8 @@
+# Overview
+That's right, this is a super complicated project where the user can play the difficult game of Tic Tac Toe.
+
+Click [here](https://youtu.be/HD_XfKM8aCk) to watch a YouTube demonstration of this project.
+
 # TicTacToe01
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
