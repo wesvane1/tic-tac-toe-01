@@ -14,26 +14,6 @@ export class TestComponent {
   // 4 | 5 | 6
   // --+---+--
   // 7 | 8 | 9
-  // number: number = 0;
-  // currentValue: string = "X";
-
-  // xORo() {
-  //   if (this.number == 9){
-  //     console.log("Game over");
-  //   }
-  //   else if (this.number % 2 == 0) {
-  //     console.log("O");
-  //   } else if (this.number % 2 != 0) {
-  //     console.log("X");
-  //   }
-  //   console.log(this.number)
-  //   this.number++;
-  //   return;
-  // }
-
-  // toggleValue() {
-  //   this.currentValue = this.currentValue === "X" ? "O" : "X"; // Toggle between "X" and "O"
-  // }
 
   buttonValues: string[] = new Array(9).fill(""); // Initialize an array with 9 empty strings
   number: number = 0;
