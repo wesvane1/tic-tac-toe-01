@@ -1,0 +1,62 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px; /* Adjust the gap between grid items */
+  background-color: black;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #000; */
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  border:none;
+  fill: none;
+  height: 10vh;
+  width: 100%; /* Make buttons fill the entire grid item */
+}
+
+button:hover{
+  background-color: rgb(245, 245, 245);
+}
+
+button:active{
+  background-color: rgb(230, 230, 230);
+}
+
+.resetButtonDiv {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button */
+}
+
+.resetButton{
+  margin-top: 3vh;
+  background-color: rgb(255, 0, 0);
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px lightgrey;
+  transition: .1s;
+  width: 15vh;
+  height: 8vh;
+  font-size: large;
+  font-weight:bolder;
+  display: none;
+}
+.resetButton:hover{
+  background-color: rgb(255, 70, 70);
+}
+.resetButton:active{
+  background-color: rgb(255, 100, 100);
+  box-shadow: none;
+}
+
+.displayWinner {
+  display: none;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+}
