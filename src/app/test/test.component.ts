@@ -6,19 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './test.component.css'
 })
 export class TestComponent {
-  // Possible wins:
-
-  // 123,456,789,147,258,369,159,951,741,852,963,987,654,321 (14 possibilities)
-  // 1 | 2 | 3
-  // --+---+--
-  // 4 | 5 | 6
-  // --+---+--
-  // 7 | 8 | 9
 
   buttonValues: string[] = new Array(9).fill(""); // Initialize an array with 9 empty strings
+  isButtonDisabled: boolean[] = Array(9).fill(false); // Initialize an array of 9 values all set to false
   number: number = 0;
   resetNumber: number = 9;
-  isButtonDisabled: boolean[] = Array(9).fill(false);
 
   toggleValue(index: number) {
 
@@ -26,11 +18,6 @@ export class TestComponent {
       this.buttonValues[index] = this.number % 2 === 0 ? "X" : "O"; // Set "X" if number is even, otherwise "O"
       this.isButtonDisabled[index] = true;
     }
-      // } else if (this.buttonValues[index] === "X") {
-    //   this.buttonValues[index] = "O"; // Set "O" if the button value is "X"
-    // } else {
-    //   this.buttonValues[index] = "X"; // Set "X" if the button value is "O"
-    // }
     this.number++;
     if (this.number == 9) {
       const resetButton = document.getElementsByClassName("resetButton")[0] as HTMLElement | undefined;
