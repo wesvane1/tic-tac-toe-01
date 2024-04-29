@@ -19,6 +19,7 @@ button {
   fill: none;
   height: 10vh;
   width: 100%; /* Make buttons fill the entire grid item */
+  background-color: none;
 }
 
 button:hover{
@@ -62,5 +63,6 @@ button:active{
 }
 
 button:disabled{
-  cursor: not-allowed;
+  /* background-color: rgb(165, 220, 165); */
+  color:black;
 }

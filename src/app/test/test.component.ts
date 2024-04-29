@@ -9,8 +9,8 @@ export class TestComponent {
 
   buttonValues: string[] = new Array(9).fill(""); // Initialize an array with 9 empty strings
   isButtonDisabled: boolean[] = Array(9).fill(false); // Initialize an array of 9 values all set to false
-  number: number = 0;
-  resetNumber: number = 9;
+  number: number = -1;
+  resetNumber: number = 8;
 
   toggleValue(index: number) {
 
@@ -19,7 +19,7 @@ export class TestComponent {
       this.isButtonDisabled[index] = true;
     }
     this.number++;
-    if (this.number == 9) {
+    if (this.number == 8) {
       const resetButton = document.getElementsByClassName("resetButton")[0] as HTMLElement | undefined;
       if (resetButton) {
         resetButton.style.display = 'block'; // Set style if resetButton exists
@@ -32,11 +32,14 @@ export class TestComponent {
   resetButton() {
     if (this.resetNumber >= 0) {
       for (let i = 0; i < this.buttonValues.length; i++) {
+        let Button = document.querySelector(`.b${i}`) as unknown as HTMLElement;
+        Button.style.backgroundColor = 'white';
         this.buttonValues[i] = ""; // Assign an empty string to each button value
         this.isButtonDisabled[i] = false;
       }
     }
   }
+
 
   checkWinner(): string | null {
     const winningCombinations = [
@@ -51,9 +54,15 @@ export class TestComponent {
     for (const combination of winningCombinations) {
       const [a, b, c] = combination;
       if (this.buttonValues[a] && 
-          this.buttonValues[a] === this.buttonValues[b] && 
-          this.buttonValues[a] === this.buttonValues[c]) {
-        // return this.buttonValues[a]; // Return the mark of the winner
+        this.buttonValues[a] === this.buttonValues[b] && 
+        this.buttonValues[a] === this.buttonValues[c]) {
+          // return this.buttonValues[a]; // Return the mark of the winner
+        for (const i of combination){
+          let Button = document.querySelector(`.b${i}`) as unknown as HTMLElement;
+          if (Button){
+            Button.style.backgroundColor = 'green';
+          }
+        }
         const resetButton = document.getElementsByClassName("resetButton")[0] as HTMLElement | undefined;
         const displayWinner = document.getElementsByClassName("displayWinner")[0] as HTMLElement | undefined;
         if (resetButton && displayWinner) {
