@@ -18,15 +18,19 @@ export class TestComponent {
   buttonValues: string[] = new Array(9).fill(""); // Initialize an array with 9 empty strings
   number: number = 0;
   resetNumber: number = 9;
+  isButtonDisabled: boolean[] = Array(9).fill(false);
 
   toggleValue(index: number) {
+
     if (this.buttonValues[index] === "") {
       this.buttonValues[index] = this.number % 2 === 0 ? "X" : "O"; // Set "X" if number is even, otherwise "O"
-    } else if (this.buttonValues[index] === "X") {
-      this.buttonValues[index] = "O"; // Set "O" if the button value is "X"
-    } else {
-      this.buttonValues[index] = "X"; // Set "X" if the button value is "O"
+      this.isButtonDisabled[index] = true;
     }
+      // } else if (this.buttonValues[index] === "X") {
+    //   this.buttonValues[index] = "O"; // Set "O" if the button value is "X"
+    // } else {
+    //   this.buttonValues[index] = "X"; // Set "X" if the button value is "O"
+    // }
     this.number++;
     if (this.number == 9) {
       const resetButton = document.getElementsByClassName("resetButton")[0] as HTMLElement | undefined;
@@ -42,6 +46,7 @@ export class TestComponent {
     if (this.resetNumber >= 0) {
       for (let i = 0; i < this.buttonValues.length; i++) {
         this.buttonValues[i] = ""; // Assign an empty string to each button value
+        this.isButtonDisabled[i] = false;
       }
     }
   }

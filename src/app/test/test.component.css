@@ -60,3 +60,7 @@ button:active{
   justify-content: center; /* Horizontally center the content */
   align-items: center; /* Vertically center the content */
 }
+
+button:disabled{
+  cursor: not-allowed;
+}
